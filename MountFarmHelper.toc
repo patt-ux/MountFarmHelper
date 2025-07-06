@@ -1,4 +1,3 @@
-## Interface: 100207
 ## Title: Mount Farm Helper
 ## Notes: Helps track mount farming attempts and lockouts
 ## Author: YourName
