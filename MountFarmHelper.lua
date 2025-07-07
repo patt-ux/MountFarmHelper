@@ -105,6 +105,10 @@ local function GetLockoutInfo(mountID)
 end
 
 local function LoadUncollectedMounts()
+    if not IsAddOnLoaded("Blizzard_Collections") then
+        LoadAddOn("Blizzard_Collections")
+    end
+    
     allMounts = {}
     local numMounts = C_MountJournal.GetNumMounts()
     
@@ -298,7 +302,10 @@ refreshButton:SetScript("OnClick", function()
 end)
 
 -- Initialize
-frame:SetScript("OnShow", function()
+local eventFrame = CreateFrame("Frame")
+eventFrame:RegisterEvent("PLAYER_LOGIN")
+eventFrame:SetScript("OnEvent", function(self, event, ...)
+    -- Now safe to load mounts
     LoadUncollectedMounts()
     ApplyFilters()
 end)

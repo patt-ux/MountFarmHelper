@@ -1,6 +1,7 @@
+## Interface: 110107
 ## Title: Mount Farm Helper
 ## Notes: Helps track mount farming attempts and lockouts
-## Author: YourName
+## Author: PattyUX
 ## Version: 0.1
 ## SavedVariables: MountFarmHelperDB
 MountFarmHelper.lua
